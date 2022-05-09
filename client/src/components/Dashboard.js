@@ -65,7 +65,8 @@ export default function Dashboard({ code }) {
     }, [search, accessToken])
 
     return(
-        <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
+        <Container className="d-flex flex-column py-2" style={{ height: "100vh", border: "1px solid rgba(0, 0, 0, 0.3)", padding: "5px 20px" }}>
+            <p style={{ marginBottom: "20px", textAlign: "center", fontFamily: "Verdana", color: "rgba(7, 148, 73, 1)" }}>Type in the name of the song you want the lyrics to. Click the song and the lyrics will be displayed while the song plays. Happy listening!</p>
             <Form.Control 
                 type="search"
                 placeholder="Search Songs/Artists"
@@ -77,11 +78,11 @@ export default function Dashboard({ code }) {
                     <TrackSearchResult 
                         track={track} 
                         key={track.uri} 
-                        chooseTrack={chooseTrack} 
+                        chooseTrack={chooseTrack}
                     />
                 ))}
                 {searchResults.length === 0 && (
-                    <div className="text-center" style={{ whiteSpace: "pre"}}>{lyrics}</div>
+                    <div className="text-center" style={{ whiteSpace: "pre" }}>{lyrics}</div>
                 )}
             </div>
             <div>

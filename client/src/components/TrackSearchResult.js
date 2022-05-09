@@ -8,7 +8,11 @@ export default function TrackSearchResult({ track, chooseTrack }) {
     return (
         <div 
             className="d-flex m-2 align-items-center"
-            style={{ cursor: "pointer" }}
+            style={{ 
+                cursor: "pointer", 
+                borderBottom: "1px solid rgba(0, 0, 0, 0.3)", 
+                padding: "5px 10px" 
+            }}
             onClick={handlePlay}
         >
             <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
